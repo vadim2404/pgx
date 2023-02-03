@@ -262,7 +262,7 @@ macro_rules! pg_magic_func {
                 float8byval: pgx::pg_sys::USE_FLOAT8_BYVAL as i32,
                 abi_extra: {
                     // array::from_fn isn't const yet, boohoo, so const-copy a bstr
-                    let magic = b"PostgreSQL";
+                    let magic = b"Neon Postgres";
                     let mut abi = [0 as ::pgx::ffi::c_char; 32];
                     let mut i = 0;
                     while i < magic.len() {
